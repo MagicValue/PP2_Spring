@@ -12,5 +12,11 @@ public class AppConfig {
         return helloWorld;
     }
 
-    public Cat getCat
+    @Bean(name="cat")
+    @Scope("prototype")
+    public Cat getCat() {
+        Cat cat = new Cat();
+        cat.setMessage("I'm cat");
+        return cat;
+    }
 }
